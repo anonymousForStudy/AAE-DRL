@@ -38,10 +38,10 @@ python AAE_main.py --unaug_dataset
 
 
 **Generator loss graph over 101 epochs on unaugmented data (using MLFlow)**
-![G_loss_unaug](https://github.com/user-attachments/assets/70452eb4-ddac-4d1b-a098-22a43f617a9c)
+![G_loss_unaug](https://github.com/user-attachments/assets/2caf65aa-375c-4925-8845-3a8ec15e4d57)
 
 **Discriminator loss graph over 101 epochs on unaugmented data (using MLFlow)**
-![D_loss_unaug](https://github.com/user-attachments/assets/893c5429-80e8-4812-856b-3e849b3653f0)
+![D_loss_unaug](https://github.com/user-attachments/assets/77cf2765-37b5-418a-91b2-10beda92dfe2)
 
 
 ## 2. Benchmark classification of unaugmented data
@@ -66,7 +66,7 @@ On another note, we provided the code for the Optuna trials in the clfs/clf_opti
 - --rf_clf: default= False, type=bool : to use Random Forest
 
 **Classification report of Random Forest tested on unaugmented data**
-![RF_unaug](https://github.com/user-attachments/assets/611ab21f-d561-4a6b-ac42-47b93813eba0)
+![RF_unaug](https://github.com/user-attachments/assets/dc253fa4-316f-40be-b7bc-2874a0598c7a)
 
 **Classification report of Extreme Gradient Boosting tested on unaugmented data**
 ![XGB_unaug](https://github.com/user-attachments/assets/93530e4c-9f61-4666-9b12-8989c32d24f2)
