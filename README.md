@@ -10,8 +10,12 @@ Additional links:
 - [Optuna Extreme Gradient Boosting (py file)](https://github.com/optuna/optuna-examples/blob/main/xgboost/xgboost_simple.py)
 - [MLFlow (documentation)](https://mlflow.org/docs/latest/getting-started/intro-quickstart/index.html)
 
+
+
 # Data Processing
 We used the UNSW-NB15 dataset by downloading [the CSV files](https://research.unsw.edu.au/projects/unsw-nb15-dataset), the final version of the dataset (joined, cleaned and preprocessed) is available in data/prep.zip .
+
+
 
 # A step-by-step guide to implementing AAE-DRL
 ## 1. AAE training and testing on unaugmented data
@@ -19,10 +23,12 @@ We used the UNSW-NB15 dataset by downloading [the CSV files](https://research.un
 ```bash
 python AAE_main.py --train --unaug_dataset
 ```
+
 1.2. To test the AAE model on the unaugmented dataset, run:
 ```bash
 python AAE_main.py --unaug_dataset
 ```
+
 *Options*
 - --batch_size_train: default=32, type=int : set training batch size
 - --batch_size_test: default=64, type=int : set validation and testing batch size
@@ -36,7 +42,6 @@ python AAE_main.py --unaug_dataset
 - --dataset_file: default="ds.csv" : assign name to dataset
 - --save_state_dict: default="aae3.pth" : assign name to state dictionary
 
-
 **Generator loss graph over 101 epochs on unaugmented data (using MLFlow)**
 ![G_loss_unaug](https://github.com/user-attachments/assets/2caf65aa-375c-4925-8845-3a8ec15e4d57)
 
@@ -49,6 +54,7 @@ python AAE_main.py --unaug_dataset
 ```bash
 python benchmark_clf_main.py --unaug_dataset
 ```
+
 2.2. To evaluate the generated data on the other benchmark classifiers, set one of the following options to True:
 --xgb_clf
 --KNN_clf
@@ -57,7 +63,9 @@ Example:
 ```bash
 python benchmark_clf_main.py --rf_clf=True --unaug_dataset
 ```
-On another note, we provided the code for the Optuna trials in the clfs/clf_optim.py file.
+
+On another note, we provided the code for the Optuna trials in the clfs/clf_optim.py file. Accordingly, ou can change the parameters of each classifier in the clfs/benchmark_classification.py file
+
 *Options*
 - --features: default="ds_org.csv" : equivalent of --dataset_file ; refer to the dataset generated
 - --unaug_dataset : action = "store_true" : use unaugmented dataset, if not specified then augmented dataset
@@ -69,13 +77,13 @@ On another note, we provided the code for the Optuna trials in the clfs/clf_opti
 ![RF_unaug](https://github.com/user-attachments/assets/dc253fa4-316f-40be-b7bc-2874a0598c7a)
 
 **Classification report of Extreme Gradient Boosting tested on unaugmented data**
-![XGB_unaug](https://github.com/user-attachments/assets/93530e4c-9f61-4666-9b12-8989c32d24f2)
+![XGB_unaug](https://github.com/user-attachments/assets/c934836e-adc9-41f5-800d-773c3ea3bf4c)
 
 **Classification report of Gradient Boosting tested on unaugmented data**
-![gb_unaug](https://github.com/user-attachments/assets/619379f9-7950-49fb-8878-e3ceebd4e280)
+![gb_unaug](https://github.com/user-attachments/assets/69db63d9-70c6-418f-8fe4-713f16b0ab5d)
 
 **Classification report of K Nearest Neighbor tested on unaugmented data**
-![KNN_unaug](https://github.com/user-attachments/assets/db82d8f1-1c63-484d-9ab2-51c4efd36f69)
+![KNN_unaug](https://github.com/user-attachments/assets/34ddb57b-703a-423f-974f-cf69656c0f69)
 
 
 ## 3. TabNet classifier pre-training 
@@ -83,10 +91,12 @@ On another note, we provided the code for the Optuna trials in the clfs/clf_opti
 ```bash
 python classifier_main.py --train
 ```
+
 3.2. To test the classifier, run:
 ```bash
 python classifier_main.py
 ```
+
 *Options*
 - --batch_size_train: default=32, type=int : set training batch size
 - --batch_size_test: default=64, type=int : set validation and testing batch size
@@ -102,10 +112,12 @@ python classifier_main.py
 ```bash
 python DRL_main.py --train
 ```
+
 4.2. To test the DRL algorithm, run:
 ```bash
 python DRL_main.py
 ```
+
 *Options*
 - --batch_size_train: default=32, type=int : set training batch size
 - --batch_size_test: default=64, type=int : set validation and testing batch size
@@ -120,11 +132,13 @@ python DRL_main.py
 - --actor_path: default = "actor.pth" : assign name to actor state dictionary
 - --critic_path: default = "critic1.pth" : assign name to critic state dictionary
 
+
 ## 5. TabNet classifier label prediction
 To predict labels for the new synthetic dataset, run
 ```bash
 python classifier_main.py --label_gen
 ```
+
 *Options*
 In addition to the options mentioned in STEP 3, we can pass the following:
 - --label_gen: action="store_true" : generate labels
@@ -144,10 +158,10 @@ In addition to the options mentioned in STEP 1, we can pass the following:
 We assign 4 to --n_iter and 43313 to --n_samples_per_iter to match the augmented dataset size. We also assign new values to --dataset_file and --save_state_dict to avoid overwriting files.
 
 **Generator loss graph over 101 epochs on augmented data (using MLFlow)**
-![Screenshot from 2025-03-01 07-32-17](https://github.com/user-attachments/assets/714d5a23-39dc-4022-9acb-052a3ee11464)
+![Screenshot from 2025-03-01 07-32-17](https://github.com/user-attachments/assets/67f2d44a-0e0b-44f2-ab27-608a9ed31341)
 
 **Discriminator loss graph over 101 epochs on augmented data (using MLFlow)**
-![Screenshot from 2025-03-01 07-31-49](https://github.com/user-attachments/assets/42f5ba8c-538b-488c-ab75-462956674eb6)
+![Screenshot from 2025-03-01 07-31-49](https://github.com/user-attachments/assets/611437d5-b4a3-4239-9bce-6d53dfa57941)
 
 
 ## 7. Benchmark classification on augmented dataset
@@ -155,26 +169,29 @@ We assign 4 to --n_iter and 43313 to --n_samples_per_iter to match the augmented
 ```bash
 python benchmark_clf_main.py
 ```
+
 7.2. As shown in STEP 2, you can change another classifier using the mentioned options.
 Example:
 ```bash
 python benchmark_clf_main.py --KNN_clf=True
 ```
+
 *Options*
 In addition to the options mentioned in STEP 1, we can pass the following:
 - --labels: default="labels.csv" : refer to the labels generated
 
 **Classification report of Random Forest tested on augmented data**
-![rf_aug](https://github.com/user-attachments/assets/b77fc07b-1b9a-408f-9426-e5b4453d91dd)
+![rf_aug](https://github.com/user-attachments/assets/a56767b4-9718-47a1-973c-71dea1a55a13)
 
 **Classification report of Extreme Gradient Boosting tested on augmented data**
-![xgb_aug](https://github.com/user-attachments/assets/2b82f42e-c90a-4225-b25d-e08cac469228)
+![xgb_aug](https://github.com/user-attachments/assets/b0cede88-e92f-4de3-9b62-13078d07e382)
 
 **Classification report of Gradient Boosting tested on augmented data**
-![gb_aug](https://github.com/user-attachments/assets/454afbd3-e53d-472f-8ae2-bae90e4ac834)
+![gb_aug](https://github.com/user-attachments/assets/d7d4f69c-b55f-46a7-89da-8f4e6bd5bdf0)
 
 **Classification report of K Nearest Neighbor tested on augmented data**
-![knn_aug](https://github.com/user-attachments/assets/6e63966b-d5fc-4387-9421-c6d37f39eed2)
+![knn_aug](https://github.com/user-attachments/assets/6874711f-9524-47a5-90e7-390e4e112ac9)
+
 
 
 # Comperative Studies
@@ -186,6 +203,7 @@ or
 ```bash
 python comperativeStudies/AE_main.py --model AE-DQN --train --unaug_dataset
 ```
+
 In case of RL-GAN, the proposed Generative Adversarial Network (GAN) is executed after the AE.
 
 1.2. To test the Autoencoder (AE), run:
@@ -193,7 +211,7 @@ In case of RL-GAN, the proposed Generative Adversarial Network (GAN) is executed
  python comperativeStudies/AE_main.py --model RL-GAN --unaug_dataset
 ```
 
-2. Use the same script for benchmarking as shown in STEP 2
+2. Use the same script for benchmarking as shown in STEP 2 (AAE-DRL)
 For example, to perform benchmark classification with GB, run:
 ```bash
 python benchmark_clf_main.py --features=<path_to_dataset_generated_with_AE> --unaug_dataset
@@ -213,6 +231,7 @@ To train DDQN (AE-DQN), run:
 ```bash
 python comperativeStudies/DQN.py --train
 ```
+
 4.2 To test TD3, run:
 ```bash
 python DRL_main.py --train --RLGAN
@@ -221,10 +240,10 @@ To test DDQN, run:
 ```bash
 python comperativeStudies/DQN.py --train
 ```
+
 *Options*
 In addition to the options mentioned in STEP4 (AAE-DRL), we can pass the following:
 - --RLGAN: action="store_false" : switch from AAE-DRL to RL-GAN
-  
 
 5. To predict labels using the corresponding study classifier, run:
 ```bash
@@ -242,6 +261,8 @@ python benchmark_clf_main.py --features=<path_to_dataset_generated_with_AE>
 ```
 We assign another name in the --features option to avoid overwriting files.
 
+
+
 # Paper
 - AAE: Makhzani, A., Shlens, J., Jaitly, N., Goodfellow, I., and Frey, B. (2015). [Adversarial autoencoders](https://arxiv.org/pdf/1511.05644). ArXiv.
 - TD3: Fujimoto, S., van Hoof, H., and Meger, D. (2018). [Addressing function approximation error in actor-critic methods](https://arxiv.org/pdf/1802.09477). ArXiv.
@@ -253,6 +274,8 @@ We assign another name in the --features option to avoid overwriting files.
 - Friedman J. (2000) [Greedy Function Approximation: A Gradient Boosting Machine](https://www.researchgate.net/publication/2424824_Greedy_Function_Approximation_A_Gradient_Boosting_Machine). The Annals of Statistics.
 - Cheng T. and Guestrin C. (2016) [XGBoost: A Scalable Tree Boosting System](https://arxiv.org/abs/1603.02754). ArXiv.
 - Cover T. and Hart P. (2006) [Nearest neighbor pattern classification](https://ieeexplore.ieee.org/document/1053964). IEEE
+
+
 
 # Citations
 - TD3
