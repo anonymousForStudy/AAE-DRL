@@ -1,3 +1,7 @@
+"""
+From https://github.com/sourabhdattawad/TabNet 
+"""
+
 """Sparsemax activation function.
 
 Pytorch implementation of Sparsemax function from:
@@ -7,7 +11,7 @@ Pytorch implementation of Sparsemax function from:
 credits: https://github.com/KrisKorrel/sparsemax-pytorch/blob/master/sparsemax.py
 
 """
-
+# libraries
 from __future__ import division
 
 import pandas as pd
@@ -19,9 +23,9 @@ from torch.utils.data import DataLoader
 import utils
 from data import main_u
 from AAE import AAE_archi_opt
-
+#cuda
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-#
+
 
 class Sparsemax(nn.Module):
     """Sparsemax function."""
