@@ -104,7 +104,7 @@ class Critic(nn.Module):
 
 
 
-class TD3(object):
+class TD3DDQN(object):
     def __init__(self, state_dim, action_dim, discrete_features, max_action, discount=0.8, tau=0.005, policy_noise=0.2,
                  noise_clip=0.5, policy_freq=1):
 
@@ -177,7 +177,7 @@ class TD3(object):
             # TD3 noise
             noise = (torch.randn_like(continuous_action) * self.policy_noise).clamp(-self.noise_clip, self.noise_clip)
             # clip next action (TD3)
-            next_continuous_action = (self.actor_target(next_state) + noise).clamp(0, self.max_action)
+            next_continuous_action = (self.actor_target(next_state) + noise).clamp(0, self.max_action) # max action range set to [0, 1]
             # define critic targets : Q1, Q2 and Q discrete
             target_Q1, target_Q2, target_discrete_Q = self.critic_target(next_state, next_continuous_action)
             # minimum Q estimates in TD3 
