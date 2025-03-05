@@ -10,7 +10,7 @@ from DRL.EnvClass import Env
 from AAE import AAE_archi_opt
 from clfs import classifier
 from utils import RL_dataloader
-from DRL.RL import TD3
+from DRL.RL import TD3DDQN
 # check for cuda and disable DSA
 os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
 os.environ['TORCH_USE_CUDA_DSA'] = "1"
