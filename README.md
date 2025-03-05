@@ -18,6 +18,11 @@ We used the UNSW-NB15 dataset by downloading [the CSV files](https://research.un
 
 
 # A step-by-step guide to implementing AAE-DRL
+To install required packages, run:
+```bash
+pip install -r requirements.txt
+```
+
 ## 1. AAE training and testing on unaugmented data
 1.1. To train the AAE model on the unaugmented dataset, run:
 ```bash
