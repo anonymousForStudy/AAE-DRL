@@ -22,7 +22,7 @@ warnings.filterwarnings('ignore')
 
 
 """--------------------------------------------data exploration/cleaning--------------------------------------------"""
-"""UNCOMMENT CODE IF YOU WANT TO USE ORIGINAL DATA INSTEAD OF UNZIPPING THE PREPARED DATASET BY US IN data/prep.zip"""
+"""UNCOMMENT CODE IF YOU WANT TO USE ORIGINAL DATASET INSTEAD OF UNZIPPING THE PREPARED DATASET BY US IN data/prep.zip"""
 # """Read CSV files and join datasets"""
 # train = pd.read_csv('/home/silver/UNSW_NB15_training-set.csv')
 # test = pd.read_csv('/home/silver/UNSW_NB15_testing-set.csv')
