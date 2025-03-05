@@ -54,6 +54,7 @@ if __name__ == "__main__":
         train_loader, val_loader = utils.dataset_function(dataset, batch_size_t=args.batch_size_train,
                                                           batch_size_o=args.batch_size_test, train=True)
         best_d_val_loss = args.loss_threshold
+        mlflow.set_experiment("AAE")
         with mlflow.start_run():
             for epoch in range(args.numEpochs):
                 g_loss, d_loss = AAE_training.train_model(train_loader)
