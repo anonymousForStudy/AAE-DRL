@@ -53,7 +53,7 @@ python AAE_main.py --unaug_dataset
 **Discriminator loss graph over 101 epochs on unaugmented data (using MLFlow)**
 ![D_loss_unaug](https://github.com/user-attachments/assets/77cf2765-37b5-418a-91b2-10beda92dfe2)
 
-Note: If you get an error relating MLFlow, please raise an issue. In the meantime, please comment out any MLFlow-related code, i.e. the following (do not forget the indentation):
+Note: If you get an error relating MLFlow, please raise an issue. In the meantime, please comment out any MLFlow-related code in AAE_main.py , i.e. the following (do not forget the indentation):
 ```bash
 process = subprocess.Popen(
         ["mlflow", "server", "--host", "127.0.0.1", "--port", "8080"],
