@@ -12,7 +12,7 @@ import numpy as np
 from clfs import classifier
 from data import main_u
 from utils import RL_dataloader
-from DRL.RL import TD3
+from DRL.RL import TD3DDQN
 from AAE import AAE_archi_opt
 
 # cuda
