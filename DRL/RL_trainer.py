@@ -198,16 +198,16 @@ encoder_generator.eval()
 decoder = AAE_archi_opt.Decoder(z_dim + label_dim, in_out, utils.discrete, utils.continuous,
                                 utils.binary).cuda() if cuda else (
     AAE_archi_opt.Decoder(z_dim + label_dim, in_out, utils.discrete, utils.continuous, utils.binary))
-decoder.load_state_dict(torch.load("/home/silver/PycharmProjects/AAEDRL/aae3.pth")["dec"])
+decoder.load_state_dict(torch.load("/AAE-DRL_author_implementation/results/aae3.pth")["dec"])
 decoder.eval()
 
 discriminator = AAE_archi_opt.Discriminator(z_dim, ).cuda() if cuda else (
     AAE_archi_opt.Discriminator(z_dim, ))
-discriminator.load_state_dict(torch.load("/home/silver/PycharmProjects/AAEDRL/aae3.pth")["disc"])
+discriminator.load_state_dict(torch.load("/AAE-DRL_author_implementation/results/aae3.pth")["disc"])
 discriminator.eval()
 
 classifier_model = classifier.TabNetModel().cuda() if cuda else classifier.TabNetModel()
-classifier_model.load_state_dict(torch.load("/home/silver/PycharmProjects/AAEDRL/clf.pth"))
+classifier_model.load_state_dict(torch.load("/AAE-DRL_author_implementation/results/clf.pth"))
 classifier_model.eval()
 
 
