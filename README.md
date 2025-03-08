@@ -53,36 +53,6 @@ python AAE_main.py --unaug_dataset
 **Discriminator loss graph over 101 epochs on unaugmented data (using MLFlow)**
 ![D_loss_unaug](https://github.com/user-attachments/assets/77cf2765-37b5-418a-91b2-10beda92dfe2)
 
-Note: If you get an error relating MLFlow, please raise an issue. In the meantime, please comment out any MLFlow-related code in AAE_main.py , i.e. the following (do not forget the indentation):
-```bash
-process = subprocess.Popen(
-        ["mlflow", "server", "--host", "127.0.0.1", "--port", "8080"],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        text=True
-    )
-mlflow.set_tracking_uri(uri="http://127.0.0.1:8080")
-...
-mlflow.set_experiment("AAE")
-with mlflow.start_run():
-...
-mlflow.log_metric("g val", g_val, step=epoch)
-mlflow.log_metric("d val", d_val, step=epoch)
-...
-model_info_gen = mlflow.pytorch.log_model(
-                pytorch_model = AAE_training.encoder_generator,
-                artifact_path="mlflow/gen",
-                input_example=30,
-                registered_model_name="G_tracking",
-            )
-model_info_disc = mlflow.pytorch.log_model(
-                pytorch_model=AAE_training.discriminator,
-                artifact_path="mlflow/discriminator",
-                input_example=10,
-                registered_model_name="D_tracking",
-            )
-```
-
 
 ## 2. Benchmark classification of unaugmented data
 2.1. To evaluate the generated data on Gradient Boosting, run:
