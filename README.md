@@ -154,7 +154,7 @@ In addition to the options mentioned in STEP 3, we can pass the following:
 ## 6. AAE training on augmented data
 To train the AAE model on the augmented dataset, run:
 ```bash
-python AAE_main.py --train --n_iter=4 --n_samples_per_iter=43313 --dataset_file=<rename_dataset> --save_state_dict=<rename_state_dicts>
+python AAE_main.py --train --n_inter=4 --n_samples_per_inter=43313 --dataset_file=<rename_dataset> --save_state_dict=<rename_state_dicts>
 ```
 *Options*
 In addition to the options mentioned in STEP 1, we can pass the following:
