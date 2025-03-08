@@ -17,25 +17,7 @@ cuda = True if torch.cuda.is_available() else False
 torch.cuda.empty_cache()
 torch.manual_seed(0)
 
-"""------------------------------------------------dataset and models------------------------------------------------"""
-in_out = 30
-z_dim = 10
-label_dim = 4
-
-# AAE components
-encoder_generator = AAE_archi_opt.EncoderGenerator(in_out, z_dim).cuda() if cuda else (
-    AAE_archi_opt.EncoderGenerator(in_out, z_dim))
-
-decoder = AAE_archi_opt.Decoder(z_dim+label_dim, in_out, utils.discrete, utils.continuous, utils.binary).cuda() if cuda \
-    else (AAE_archi_opt.Decoder(z_dim+label_dim, in_out, utils.discrete, utils.continuous, utils.binary))
-
-discriminator = AAE_archi_opt.Discriminator(z_dim, ).cuda() if cuda else (
-    AAE_archi_opt.Discriminator(z_dim, ))
-
-# Optimizers
-optimizer_G = SGD(itertools.chain(encoder_generator.parameters(), decoder.parameters()), lr=0.001, momentum=0.9)
-optimizer_D = SGD(discriminator.parameters(), lr=0.001, momentum=0.9)
-
+"""------------------------------------------------gradient penalty------------------------------------------------"""
 # Gradient penalty for discriminator loss
 def gradient_penalty(discriminator, real_samples, fake_samples):
     alpha = torch.rand(real_samples.size(0), 1).cuda() if cuda else torch.rand(real_samples.size(0), 1)
