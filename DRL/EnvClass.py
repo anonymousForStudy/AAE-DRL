@@ -1,3 +1,7 @@
+"""
+credits: https://github.com/sfujim/TD3
+"""
+
 # libraries
 import torch
 from torch.nn import Module, BCELoss, CrossEntropyLoss
