@@ -76,8 +76,8 @@ if __name__ == "__main__":
 
     # Optimizers
     optimizer_G = SGD(itertools.chain(encoder_generator.parameters(), decoder.parameters()), lr=0.001, momentum=0.9)
-    optimizer_D = SGD(discriminator.parameters(), lr=0.0005, momentum=0.9)
-    scheduler_G = MultiStepLR(optimizer_D, milestones=[16, 26, 36, 46], gamma=0.1)
+    optimizer_D = SGD(discriminator.parameters(), lr=0.001, momentum=0.9)
+    # scheduler_G = MultiStepLR(optimizer_D, milestones=[16, 26, 36, 46], gamma=0.1)
     # scheduler_D = MultiStepLR(optimizer_D, milestones=[46, 92], gamma=0.1)
 
     if args.train:
@@ -103,7 +103,7 @@ if __name__ == "__main__":
                                 'dec': decoder.state_dict(),
                                 "disc": discriminator.state_dict(),
                                 }, f"{args.save_state_dict}")
-            scheduler_G.step()
+            # scheduler_G.step()
             # scheduler_D.step()
 
             # model_info_gen = mlflow.pytorch.log_model(
