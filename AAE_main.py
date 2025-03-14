@@ -23,7 +23,7 @@ torch.manual_seed(0)
 def parse_args(args):
     parser = argparse.ArgumentParser()
     parser.add_argument("--feature_size", default=30, type=int)
-    parser.add_argument("--z_dim", default=15, type=int)
+    parser.add_argument("--z_dim", default=10, type=int)
     parser.add_argument("--label_dim", default=4, type=int)
 
     parser.add_argument('--batch_size_train', default=32, type=int)
