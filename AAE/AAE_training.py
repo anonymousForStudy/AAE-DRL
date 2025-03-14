@@ -73,7 +73,7 @@ def interpolate(z1, z2, n_steps=5):
         interpolations.append(z)
     return torch.stack(interpolations)
 
-def sample_runs(n_inter, n_samples_p_inter):
+def sample_runs(decoder, n_inter, n_samples_p_inter):
     # data samples with the type filtered
     discrete_samples = {feature: [] for feature in decoder.discrete_features}
     continuous_samples = {feature: [] for feature in decoder.continuous_features}
@@ -101,7 +101,7 @@ def sample_runs(n_inter, n_samples_p_inter):
 
 
 """--------------------------------------------------model training--------------------------------------------------"""
-def train_model(train_loader):
+def train_model(train_loader, encoder_generator, decoder, discriminator, z_dim, optimizer_G, optimizer_D):
     # Set to train mode
     encoder_generator.train()
     decoder.train()
@@ -179,7 +179,7 @@ def train_model(train_loader):
 
 """-------------------------------------------------model validation-------------------------------------------------"""
 
-def evaluate_model(val_loader):
+def evaluate_model(val_loader, encoder_generator, decoder, discriminator, z_dim):
     # model in eval mode
     encoder_generator.eval()
     decoder.eval()
