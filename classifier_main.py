@@ -26,7 +26,7 @@ def parse_args(args):
     parser.add_argument("--unaug_dataset", default=True)
     # Generate labels for synthetic dataset
     parser.add_argument("--label_gen", action="store_true")
-    parser.add_argument("--synth_dataset_path", default="rl_ds.csv") # path to unsupervised dataset
+    parser.add_argument("--synth_dataset_path", default="rl_ds1.csv") # path to unsupervised dataset
     # PLEASE USE THE ABSOLUTE PATH IF YOU GET A "NO FILE IS FOUND" ERROR!!!
     # save labels
     parser.add_argument("--labels_file", default = "labels.csv")
