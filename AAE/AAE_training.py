@@ -14,7 +14,7 @@ os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
 os.environ['TORCH_USE_CUDA_DSA'] = "1"
 
 cuda = True if torch.cuda.is_available() else False
-torch.cuda.empty_cache()
+torch.cuda.empty_cache() 
 torch.manual_seed(0)
 
 """------------------------------------------------gradient penalty------------------------------------------------"""
