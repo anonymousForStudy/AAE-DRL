@@ -69,7 +69,7 @@ Example:
 python benchmark_clf_main.py --rf_clf=True --unaug_dataset
 ```
 
-On another note, we provided the code for the Optuna trials in the clfs/clf_optim.py file. Accordingly, ou can change the parameters of each classifier in the clfs/benchmark_classification.py file
+On another note, we provided the code for the Optuna trials in the clf_optim.py file. Accordingly, ou can change the parameters of each classifier in the clfs/benchmark_classification.py file
 
 *Options*
 - --features: default="ds_org.csv" : equivalent of --dataset_file ; refer to the dataset generated
