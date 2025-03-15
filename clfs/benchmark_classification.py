@@ -18,13 +18,11 @@ The defined parameters are for the augmented data!
 """
 
 # parameters for unaugmented dataset
-best_xgb_param_unaug = {'booster': 'gbtree', 'lambda': 1.1068723944171659e-08, 'alpha': 8.160758817453953e-08,
-        'subsample': 0.7402331626687324, 'colsample_bytree': 0.5025353594627584, 'max_depth': 22, 'min_child_weight': 2,
-        'eta': 0.050901063251071806, 'gamma': 5.515409506712251e-08, 'grow_policy': 'lossguide', "verbosity": 0,
-        "objective": "multi:softmax", "num_class": 30}
-best_KNN_param_unaug = {'n_neighbors': 27, 'metric': 'manhattan', 'leaf_size': 64}
-best_rf_param_unaug = {'max_depth': 14, 'n_estimators': 177}
-best_gb_param_unaug = {'n_estimators': 26, 'learning_rate': 0.03515322582815399, 'max_depth': 10}
+best_xgb_param_unaug = {'booster': 'dart', 'lambda': 5.0292864803340164e-08, 'alpha': 0.0033512466294373347, 'subsample': 0.7722287536019242, 'colsample_bytree': 0.8788241965652669, 'max_depth': 34, 'min_child_weight': 5, 'eta': 0.05922095844261773, 'gamma': 0.00020027098114354085, 
+                        'grow_policy': 'depthwise', 'sample_type': 'uniform', 'normalize_type': 'tree', 'rate_drop': 4.157639697493719e-07, 'skip_drop': 2.4062928977967765e-06}
+best_KNN_param_unaug = {'n_neighbors': 9, 'metric': 'manhattan', 'leaf_size': 46}
+best_rf_param_unaug = {'max_depth': 13, 'n_estimators': 132}
+best_gb_param_unaug = {'n_estimators': 29, 'learning_rate': 0.016756252304922673, 'max_depth': 11}
 
 # parameters for augmented dataset
 best_xgb_param_aug = {'booster': 'gbtree', 'lambda': 0.27402306472106963, 'alpha': 1.0337469639524462e-07,
