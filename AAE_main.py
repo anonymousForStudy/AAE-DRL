@@ -41,11 +41,11 @@ def parse_args(args):
     parser.add_argument('--train', action='store_true')
     # unaug = unaugmented dataset = original dataset : if False then augmented dataset
     parser.add_argument("--unaug_dataset", action="store_true")
-    parser.add_argument("--dataset_file", default="ds.csv")
+    parser.add_argument("--dataset_file", default="/results/ds.csv")
     # PLEASE USE THE ABSOLUTE PATH IF YOU GET A NO FILE IS FOUND!!!
-    parser.add_argument("--save_state_dict", default="aae.pth")
-    parser.add_argument('--X_ds', default="rl_ds.csv")
-    parser.add_argument('--y_ds', default="labels.csv")
+    parser.add_argument("--save_state_dict", default="/results/aae.pth")
+    parser.add_argument('--X_ds', default="/results/rl_ds1.csv")
+    parser.add_argument('--y_ds', default="/results/labels.csv")
 
     return parser.parse_args(args)
 
