@@ -1,3 +1,4 @@
+from __future__ import division
 """
 Pytorch implementation of TabNet from https://github.com/sourabhdattawad/TabNet 
 """
@@ -12,8 +13,6 @@ credits: https://github.com/KrisKorrel/sparsemax-pytorch/blob/master/sparsemax.p
 
 """
 # libraries
-from __future__ import division
-
 import pandas as pd
 import torch
 import torch.nn as nn
