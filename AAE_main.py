@@ -125,5 +125,5 @@ if __name__ == "__main__":
     else:
         test_loader = utils.dataset_function(dataset, batch_size_t=args.batch_size_train,
                                              batch_size_o=args.batch_size_test, train=False)
-        g_loss, d_loss = AAE_testing.test_model(test_loader, args.save_state_dict)
+        g_loss, d_loss = AAE_testing.test_model(test_loader, args.save_state_dict, encoder_generator, decoder, discriminator, args.z_dim)
         print(f"g_loss: {g_loss}, d_loss: {d_loss}")
