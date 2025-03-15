@@ -16,28 +16,6 @@ cuda = True if torch.cuda.is_available() else False
 torch.cuda.empty_cache()
 torch.manual_seed(0)
 
-
-"""------------------------------------------------dataset and models------------------------------------------------"""
-in_out = 30
-z_dim = 10
-label_dim = 4
-
-encoder_generator = AAE_archi_opt.EncoderGenerator(in_out, z_dim).cuda() if cuda else (
-    AAE_archi_opt.EncoderGenerator(in_out, z_dim))
-
-
-decoder = AAE_archi_opt.Decoder(z_dim+label_dim, in_out, utils.discrete, utils.continuous, utils.binary).cuda() if cuda \
-    else (AAE_archi_opt.Decoder(z_dim+label_dim, in_out, utils.discrete, utils.continuous, utils.binary))
-
-discriminator = AAE_archi_opt.Discriminator(z_dim, ).cuda() if cuda else (
-    AAE_archi_opt.Discriminator(z_dim, ))
-
-
-optimizer_G = SGD(itertools.chain(encoder_generator.parameters(), decoder.parameters()),
-                              lr=0.001)
-optimizer_D = SGD(discriminator.parameters(), lr=0.001)
-
-
 def test_model(test_loader, aae_path):
     # load state dicts
     encoder_generator.load_state_dict(torch.load(f"{aae_path}")["enc_gen"])
