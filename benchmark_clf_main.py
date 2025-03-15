@@ -11,7 +11,7 @@ def parse_args(args):
     parser = argparse.ArgumentParser()
 
     # synthetic dataset path
-    parser.add_argument('--features', default="ds_org.csv")
+    parser.add_argument('--features', default="ds.csv")
     # generated labels path
     parser.add_argument('--labels', default="labels.csv")
 
