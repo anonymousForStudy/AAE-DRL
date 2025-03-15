@@ -4,10 +4,10 @@ import sys
 
 import numpy as np
 import torch
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from comperativeStudies.RLGAN.TD3Env import Env
 from comperativeStudies.RLGAN.RL_model import TD3
 from comperativeStudies.RLGAN import AE, gan, MNISTClassifier
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import utils
 
 
@@ -79,11 +79,11 @@ class Tester(object):
 encoder = AE.Encoder()
 encoder.eval()
 decoder = AE.Decoder(10, 30, 64, utils.discrete, utils.continuous, utils.binary)
-decoder.load_state_dict(torch.load("ae1.pth", map_location="cpu")["dec"])
+decoder.load_state_dict(torch.load("/results/ae1.pth", map_location="cpu")["dec"])
 decoder.eval()
 generator = gan.Generator()
 discriminator = gan.Discriminator()
-discriminator.load_state_dict(torch.load("gan.pth", map_location="cpu")["disc"])
+discriminator.load_state_dict(torch.load("/results/gan.pth", map_location="cpu")["disc"])
 discriminator.eval()
 classifier = MNISTClassifier.Classifier()
 # classifier.load_state_dict(torch.load("best_model1.pth", map_location="cpu"))
