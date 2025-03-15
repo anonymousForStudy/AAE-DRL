@@ -16,7 +16,7 @@ cuda = True if torch.cuda.is_available() else False
 torch.cuda.empty_cache()
 torch.manual_seed(0)
 
-def test_model(test_loader, aae_path):
+def test_model(test_loader, aae_path, encoder_generator, decoder, discriminator, z_dim):
     # load state dicts
     encoder_generator.load_state_dict(torch.load(f"{aae_path}")["enc_gen"])
     decoder.load_state_dict(torch.load(f"{aae_path}")["dec"])
