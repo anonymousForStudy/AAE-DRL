@@ -13,11 +13,11 @@ cuda = True if torch.cuda.is_available() else False
 def parse_args(args):
     parser = argparse.ArgumentParser()
     parser.add_argument('--train', action='store_true')
-    parser.add_argument('--X_ds', default="rl_ds.csv")
-    parser.add_argument('--y_ds', default="labels.csv")
-    parser.add_argument("--dataset_file", default="ds.csv")
+    parser.add_argument('--X_ds', default="/results/rl_ds.csv")
+    parser.add_argument('--y_ds', default="/results/labels.csv")
+    parser.add_argument("--dataset_file", default="/results/ds.csv")
     parser.add_argument("--model", choices=['RLGAN', 'AEDQN'])
-    parser.add_argument("--save_state_dict", default="ae1.pth")
+    parser.add_argument("--save_state_dict", default="/results/ae1.pth")
 
     return parser.parse_args(args)
 
