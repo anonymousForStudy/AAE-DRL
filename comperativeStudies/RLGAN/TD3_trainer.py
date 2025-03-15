@@ -4,11 +4,11 @@ import sys
 
 import numpy as np
 import torch
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from comperativeStudies.RLGAN.TD3Env import Env
 from comperativeStudies.RLGAN.RL_model import TD3
 from comperativeStudies.RLGAN import AE, gan, MNISTClassifier
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import utils
 
 
