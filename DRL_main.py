@@ -40,9 +40,9 @@ def parse_args(args):
 
     
     # save samples and state dictionaries
-    parser.add_argument("--rl_dataset", default="rl_ds1.csv") # newly generated dataset
-    parser.add_argument("--actor_path", default = "actor1.pth") # actor state dictionary
-    parser.add_argument("--critic_path", default = "critic1.pth") # critic state dictionary
+    parser.add_argument("--rl_dataset", default="/results/rl_ds1.csv") # newly generated dataset
+    parser.add_argument("--actor_path", default = "/results/actor1.pth") # actor state dictionary
+    parser.add_argument("--critic_path", default = "/results/critic1.pth") # critic state dictionary
 
     return parser.parse_args(args)
 
