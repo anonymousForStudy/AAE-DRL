@@ -18,20 +18,22 @@ The defined parameters are for the augmented data!
 """
 
 # parameters for unaugmented dataset
-best_xgb_param_unaug = {'booster': 'dart', 'lambda': 5.0292864803340164e-08, 'alpha': 0.0033512466294373347, 'subsample': 0.7722287536019242, 'colsample_bytree': 0.8788241965652669, 'max_depth': 34, 'min_child_weight': 5, 'eta': 0.05922095844261773, 'gamma': 0.00020027098114354085, 
-                        'grow_policy': 'depthwise', 'sample_type': 'uniform', 'normalize_type': 'tree', 'rate_drop': 4.157639697493719e-07, 'skip_drop': 2.4062928977967765e-06}
+best_xgb_param_unaug = {'booster': 'dart', 'lambda': 5.0292864803340164e-08, 'alpha': 0.0033512466294373347, 'subsample': 0.7722287536019242, 
+                        'colsample_bytree': 0.8788241965652669, 'max_depth': 34, 'min_child_weight': 5, 'eta': 0.05922095844261773, 
+                        'gamma': 0.00020027098114354085, 'grow_policy': 'depthwise', 'sample_type': 'uniform', 'normalize_type': 'tree', 
+                        'rate_drop': 4.157639697493719e-07, 'skip_drop': 2.4062928977967765e-06, "verbosity": 0, "objective": "multi:softmax", 
+                        "num_class": 30}
 best_KNN_param_unaug = {'n_neighbors': 9, 'metric': 'manhattan', 'leaf_size': 46}
 best_rf_param_unaug = {'max_depth': 13, 'n_estimators': 132}
 best_gb_param_unaug = {'n_estimators': 29, 'learning_rate': 0.016756252304922673, 'max_depth': 11}
 
 # parameters for augmented dataset
-best_xgb_param_aug = {'booster': 'gbtree', 'lambda': 0.27402306472106963, 'alpha': 1.0337469639524462e-07,
-                       'subsample': 0.8763224738010359, 'colsample_bytree': 0.8497549372024669, 'max_depth': 18,
-                       'min_child_weight': 3, 'eta': 0.17676685584319898, 'gamma': 4.5337669584553865e-07,
-                       'grow_policy': 'lossguide', "verbosity": 0, "objective": "multi:softmax", "num_class": 30}
-best_KNN_param_aug = {"n_neighbors": 15, "metric": 'manhattan', "leaf_size": 11}
-best_rf_param_aug = {"max_depth":15, "n_estimators" : 186}
-best_gb_param_aug = {"n_estimators":15, "learning_rate" : 0.08372870472978572, "max_depth" : 12}
+best_xgb_param_aug = {'booster': 'gbtree', 'lambda': 2.032151944034843e-06, 'alpha': 9.557956416749613e-09, 'subsample': 0.9511833522668717, 
+                      'colsample_bytree': 0.5585628355617734, 'max_depth': 39, 'min_child_weight': 2, 'eta': 0.01731596321744635, 
+                      'gamma': 0.013622238453642105, 'grow_policy': 'depthwise, "verbosity": 0, "objective": "multi:softmax", "num_class": 30}
+best_KNN_param_aug = {"n_neighbors": 23, "metric": 'euclidean', "leaf_size": 22}
+best_rf_param_aug = {"max_depth":15, "n_estimators" : 50}
+best_gb_param_aug = {"n_estimators":16, "learning_rate" : 0.02429333140155607, "max_depth" : 10}
 
 def clf_class(X_train, X_test, y_train, y_test, unaugmented=False, xgb_clf=False, KNN_clf=False, rf_clf=False):
     # choose one of these classifiers
