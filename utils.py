@@ -126,6 +126,7 @@ def dataset(original=False, train=True):
         y_rl = pd.DataFrame(pd.read_csv(f"{args.y_ds}"))
         df_rl = pd.concat([X_rl, y_rl], axis=1)
         df_rl = df_rl[df_rl["attack_cat"] != 2]
+        df_rl = df_rl[df_rl["confidence"] > 0.89]
         df_rl = df_rl.drop("confidence", axis=1)
         df = pd.concat([df_org, df_rl], axis=0)
         X = df.drop(["attack_cat"], axis=1)
