@@ -138,8 +138,8 @@ Unaugmented data
 [I 2025-03-15 15:54:31,843] Trial 1 finished with value: 0.861919406379052 and parameters: {'gb_n_estimators': 29, 'gb_learning_rate': 0.016756252304922673, 'gb_max_depth': 11}. Best is trial 1 with value: 0.861919406379052.
  
 Augmented data
-'booster': 'gbtree', 'lambda': 0.27402306472106963, 'alpha': 1.0337469639524462e-07, 'subsample': 0.8763224738010359, 'colsample_bytree': 0.8497549372024669, 'max_depth': 18, 'min_child_weight': 3, 'eta': 0.17676685584319898, 'gamma': 4.5337669584553865e-07, 'grow_policy': 'lossguide'
-[I 2025-02-10 19:50:34,701] Trial 1 finished with value: 0.8909603921324278 and parameters: {'gb_n_estimators': 15, 'gb_learning_rate': 0.08372870472978572, 'gb_max_depth': 12}. Best is trial 1 with value: 0.8909603921324278.
-[I 2025-02-10 20:34:32,690] Trial 2 finished with value: 0.8915087175849775 and parameters: {'n_neighbors': 15, 'metric': 'manhattan', 'leaf_size': 11}. Best is trial 2 with value: 0.8915087175849775.
-[I 2025-02-10 20:56:42,854] Trial 2 finished with value: 0.8911551926423323 and parameters: {'rf_max_depth': 15, 'rf_n_estimators': 186}. Best is trial 2 with value: 0.8911551926423323.
+[I 2025-03-21 19:41:14,001] Trial 7 finished with value: 0.8926437909439843 and parameters: {'booster': 'gbtree', 'lambda': 2.032151944034843e-06, 'alpha': 9.557956416749613e-09, 'subsample': 0.9511833522668717, 'colsample_bytree': 0.5585628355617734, 'max_depth': 39, 'min_child_weight': 2, 'eta': 0.01731596321744635, 'gamma': 0.013622238453642105, 'grow_policy': 'depthwise'}. Best is trial 7 with value: 0.8926437909439843.
+[I 2025-03-21 19:58:25,129] Trial 1 finished with value: 0.8918550499038217 and parameters: {'gb_n_estimators': 16, 'gb_learning_rate': 0.02429333140155607, 'gb_max_depth': 10}. Best is trial 1 with value: 0.8918550499038217.
+[I 2025-03-21 20:19:48,158] Trial 4 finished with value: 0.8937165118749478 and parameters: {'n_neighbors': 23, 'metric': 'euclidean', 'leaf_size': 22}. Best is trial 4 with value: 0.8937165118749478.
+[I 2025-03-21 19:43:48,621] Trial 1 finished with value: 0.8932186787195626 and parameters: {'rf_max_depth': 15, 'rf_n_estimators': 50}. Best is trial 1 with value: 0.8932186787195626.
 """
