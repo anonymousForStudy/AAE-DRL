@@ -206,7 +206,7 @@ In addition to the options mentioned in STEP 1, we can pass the following:
 ```
 or
 ```bash
-python comperativeStudies/AE_main.py --model AE-DQN --train --unaug_dataset
+python comperativeStudies/AE_main.py --model AE+DQN --train --unaug_dataset
 ```
 
 In case of RL-GAN, the proposed Generative Adversarial Network (GAN) is executed after the AE.
