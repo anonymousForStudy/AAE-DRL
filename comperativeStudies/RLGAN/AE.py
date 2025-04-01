@@ -3,7 +3,6 @@ import torch
 import torch.nn as nn
 from torch.distributions.normal import Normal
 from torch.distributions.kl import kl_divergence
-import AE_main
 
 
 class Encoder(nn.Module):
