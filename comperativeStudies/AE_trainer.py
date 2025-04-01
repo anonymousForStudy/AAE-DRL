@@ -11,7 +11,7 @@ import utils
 
 warnings.filterwarnings("ignore")
 
-def save_features_to_csv(discrete_samples, continuous_samples, binary_samples):
+def save_features_to_csv(discrete_samples, continuous_samples, binary_samples, file_name):
     def dict_to_df(tensor_dict):
         all_data = []
         for sample_idx in range(next(iter(tensor_dict.values())).shape[0]):
@@ -34,7 +34,7 @@ def save_features_to_csv(discrete_samples, continuous_samples, binary_samples):
     binary_df = dict_to_df(binary_samples)
 
     combined_df = pd.concat([discrete_df, continuous_df, binary_df], axis=1)
-    combined_df.to_csv('ds_1st_fin.csv', index=False)
+    combined_df.to_csv(f'{file_name}.csv', index=False)
 
     return combined_df
 
