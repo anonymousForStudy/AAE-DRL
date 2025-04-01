@@ -116,5 +116,3 @@ if __name__ == "__main__":
 # y_all = pd.concat([labels_synth, y_train, y_test], axis=0)
 # X_train_all, X_test_all, y_train_all, y_test_all = train_test_split(X_all, y_all, test_size=0.2, random_state=45)
 # Encoded_data_all = CustomDataset(X_train_all.to_numpy(), y_train_all.to_numpy())
-# python your_script.py model1  # To use the first model
-# python your_script.py model2  # To use the second model
