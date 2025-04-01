@@ -27,7 +27,7 @@ def parse_args(args):
     parser.add_argument('--train', action='store_true')
     # unaug = unaugmented dataset = original dataset : if False then augmented dataset
     parser.add_argument("--unaug_dataset", action="store_true")
-    parser.add_argument("--dataset_file", default="ds2.csv")
+    parser.add_argument("--file_name", default="ds_1st.csv")
     # PLEASE USE THE ABSOLUTE PATH IF YOU GET A NO FILE IS FOUND!!!
     # Save AAE state dictionary
     parser.add_argument("--save_state_dict", default="ae2.pth")
@@ -80,7 +80,7 @@ if __name__ == "__main__":
                             }, f"{args.save_state_dict}")
 
         # Generate samples and save
-        AE_trainer.save_features_to_csv(discrete_samples, continuous_samples, binary_samples)
+        AE_trainer.save_features_to_csv(discrete_samples, continuous_samples, binary_samples, args.file_name)
 
         if args.model == "RL-GAN":
             for epoch in range(101):
