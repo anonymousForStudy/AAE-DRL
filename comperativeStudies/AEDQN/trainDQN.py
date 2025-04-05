@@ -4,8 +4,6 @@ import sys
 from comperativeStudies.AEDQN import DQL
 import numpy as np
 import torch
-from comperativeStudies.AEDQN import autoencoder
-from comperativeStudies.AEDQN import classifiers
 from comperativeStudies.AEDQN import custom_env
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -147,21 +145,5 @@ class Train(object):
         b_cat = {key: torch.cat([d[key] for d in b_list], dim=0) for key in b_list[0]}
         return d_cat, c_cat, b_cat
 
-
-
-encoder = autoencoder.Encoder()
-encoder.eval()
-
-decoder = autoencoder.Decoder(utils.discrete, utils.continuous, utils.binary)
-decoder.load_state_dict(torch.load("ae_2nd.pth", map_location="cpu")["dec"])
-decoder.eval()
-
-classifierA = classifiers.Classifier(30, 4)
-# classifierA.load_state_dict(torch.load("classifer2_model.pth", map_location="cpu"))
-classifierA.eval()
-
-classifierB = classifiers.Classifier(30, 4)
-# classifierB.load_state_dict(torch.load("classifer2_model.pth", map_location="cpu"))
-classifierB.eval()
 
 
