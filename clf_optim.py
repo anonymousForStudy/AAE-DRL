@@ -143,3 +143,10 @@ Augmented data
 [I 2025-03-21 20:19:48,158] Trial 4 finished with value: 0.8937165118749478 and parameters: {'n_neighbors': 23, 'metric': 'euclidean', 'leaf_size': 22}. Best is trial 4 with value: 0.8937165118749478.
 [I 2025-03-21 19:43:48,621] Trial 1 finished with value: 0.8932186787195626 and parameters: {'rf_max_depth': 15, 'rf_n_estimators': 50}. Best is trial 1 with value: 0.8932186787195626.
 """
+
+"""
+AE+DQN RESULTS:
+Unaugmented data
+[I 2025-04-01 21:27:38,856] Trial 12 finished with value: 0.4094444444444444 and parameters: {'n_neighbors': 1, 'metric': 'manhattan', 'leaf_size': 79}. Best is trial 12 with value: 0.4094444444444444.
+[I 2025-04-05 15:16:06,629] Trial 1 finished with value: 0.4233986928104575 and parameters: {'gb_n_estimators': 11, 'gb_learning_rate': 0.05226220530564107, 'gb_max_depth': 9}. Best is trial 1 with value: 0.4233986928104575.
+"""
