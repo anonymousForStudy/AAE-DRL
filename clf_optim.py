@@ -150,4 +150,5 @@ Unaugmented data
 [I 2025-04-01 21:27:38,856] Trial 12 finished with value: 0.4094444444444444 and parameters: {'n_neighbors': 1, 'metric': 'manhattan', 'leaf_size': 79}. Best is trial 12 with value: 0.4094444444444444.
 [I 2025-04-05 15:16:06,629] Trial 1 finished with value: 0.4233986928104575 and parameters: {'gb_n_estimators': 11, 'gb_learning_rate': 0.05226220530564107, 'gb_max_depth': 9}. Best is trial 1 with value: 0.4233986928104575.
 [I 2025-04-05 15:27:10,982] Trial 2 finished with value: 0.48276143790849674 and parameters: {'rf_max_depth': 19, 'rf_n_estimators': 115}. Best is trial 2 with value: 0.48276143790849674.
+[I 2025-04-05 15:31:41,142] Trial 11 finished with value: 0.43673202614379086 and parameters: {'booster': 'gbtree', 'lambda': 0.004684648918210196, 'alpha': 2.094456175692211e-12, 'subsample': 0.9368131549891758, 'colsample_bytree': 0.46705387197901144, 'max_depth': 42, 'min_child_weight': 2, 'eta': 1.2656838990983072e-08, 'gamma': 1.1145681519755535e-10, 'grow_policy': 'lossguide'}. Best is trial 11 with value: 0.43673202614379086.
 """
