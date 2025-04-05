@@ -157,11 +157,11 @@ decoder.load_state_dict(torch.load("ae_2nd.pth", map_location="cpu")["dec"])
 decoder.eval()
 
 classifierA = classifiers.Classifier(30, 4)
-classifierA.load_state_dict(torch.load("classifer2_model.pth", map_location="cpu"))
+# classifierA.load_state_dict(torch.load("classifer2_model.pth", map_location="cpu"))
 classifierA.eval()
 
 classifierB = classifiers.Classifier(30, 4)
-classifierB.load_state_dict(torch.load("classifer2_model.pth", map_location="cpu"))
+# classifierB.load_state_dict(torch.load("classifer2_model.pth", map_location="cpu"))
 classifierB.eval()
 
 
