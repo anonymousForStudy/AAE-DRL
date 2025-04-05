@@ -23,7 +23,7 @@ def parse_args(args):
     parser.add_argument('--numEpochs', default=51, type=int)
 
     # when the discriminator loss reaches a threshold, we save the clf state dictionary
-    parser.add_argument("--loss_threshold", default=0.3, type=float)
+    parser.add_argument("--loss_threshold", default=0.6, type=float)
 
 
     # if test: ---train False
