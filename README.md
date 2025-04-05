@@ -210,6 +210,7 @@ python comperativeStudies/AE_main.py --model AE+DQN --train --unaug_dataset
 ```
 
 In case of RL-GAN, the proposed Generative Adversarial Network (GAN) is executed after the AE.
+To avoid overwriting files add the option --save_state_dict to save the state dictionary under a new name (default: ae.pth) and --file_name to save the dataset under a new name (default: ds.csv)
 
 1.2. To test the Autoencoder (AE), run:
 ```bash
