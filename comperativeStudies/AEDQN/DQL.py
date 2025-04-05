@@ -96,6 +96,10 @@ class DQNAgent:
             target_param.data.copy_(local_param.data)
 
         return loss.item()
+        
+    def save_model(self, DQL2_path):
+    # save state dictionary after validation
+        torch.save(self.DQL2.state_dict(), f"{DQL2_path}")
 
 
 class ReplayBuffer(object):
