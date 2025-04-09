@@ -155,5 +155,6 @@ Unaugmented data
 Augmented data:
 Trial 0 finished with value: 0.8661042686013161 and parameters: {'booster': 'gbtree', 'lambda': 0.00023020795396138202, 'alpha': 8.87668689314406e-14, 'subsample': 0.9506716802128978, 'colsample_bytree': 0.46096810790322285, 'max_depth': 44, 'min_child_weight': 4, 'eta': 2.773471934744601e-05, 'gamma': 5.539357246395404e-07, 'grow_policy': 'lossguide'}. Best is trial 0 with value: 0.8661042686013161.
 [I 2025-04-09 10:45:47,792] Trial 2 finished with value: 0.3238623902579171 and parameters: {'rf_max_depth': 13, 'rf_n_estimators': 86}. Best is trial 2 with value: 0.3238623902579171.
+[I 2025-04-09 11:09:30,928] Trial 11 finished with value: 0.30009825965068215 and parameters: {'n_neighbors': 21, 'metric': 'manhattan', 'leaf_size': 54}. Best is trial 11 with value: 0.30009825965068215.
 
 """
