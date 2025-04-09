@@ -112,7 +112,7 @@ def inverse_sc_cont(X, synth):
     return pd.DataFrame(synth_inv, columns=X.columns, index=synth.index)
 
 # choose unaugmented or augmented dataset
-def dataset(original=False, train=True):
+def dataset(original=False, train=True, confidence=True):
     if original:
         if train:
             dataset = CustomDataset(main_u.X_train_sc.to_numpy(), main_u.y_train.to_numpy())
@@ -126,8 +126,9 @@ def dataset(original=False, train=True):
         y_rl = pd.DataFrame(pd.read_csv(f"{args.y_ds}"))
         df_rl = pd.concat([X_rl, y_rl], axis=1)
         df_rl = df_rl[df_rl["attack_cat"] != 2]
-        df_rl = df_rl[df_rl["confidence"] > 0.89]
-        df_rl = df_rl.drop("confidence", axis=1)
+        if confidence:
+            df_rl = df_rl[df_rl["confidence"] > 0.89]
+            df_rl = df_rl.drop("confidence", axis=1)
         df = pd.concat([df_org, df_rl], axis=0)
         X = df.drop(["attack_cat"], axis=1)
         y = df["attack_cat"]
