@@ -19,7 +19,7 @@ def parse_args(args):
     parser.add_argument("--n_inter", default=5, type=int) # we set it to 4 when --unaug_dataset = False
     parser.add_argument("--n_samples_per_inter", default=27321, type=int) # we set it to 43313 when --unaug_dataset = False
 
-    parser.add_argument("--model", choices=['RLGAN', 'AEDQN'])
+    parser.add_argument("--model", choices=['RLGAN', 'AE+DQN'])
     parser.add_argument("--save_state_dict", default="/results/ae1.pth")
 
     return parser.parse_args(args)
