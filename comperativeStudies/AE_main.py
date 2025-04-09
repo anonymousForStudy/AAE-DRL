@@ -27,14 +27,14 @@ def parse_args(args):
     parser.add_argument('--train', action='store_true')
     # unaug = unaugmented dataset = original dataset : if False then augmented dataset
     parser.add_argument("--unaug_dataset", action="store_true")
-    parser.add_argument("--file_name", default="ds_1st.csv")
+    parser.add_argument("--file_name", default="ds.csv")
     # PLEASE USE THE ABSOLUTE PATH IF YOU GET A NO FILE IS FOUND!!!
     # Save AAE state dictionary
-    parser.add_argument("--save_state_dict", default="ae2.pth")
+    parser.add_argument("--save_state_dict", default="ae1.pth")
     parser.add_argument("--gan_state_dict", default="gan.pth")
 
     # Path to augmented dataset
-    parser.add_argument('--X_ds', default="rl1.csv")
+    parser.add_argument('--X_ds', default="rl_ds2.csv")
     # Path to augmented dataset's labels
     parser.add_argument('--y_ds', default="labels1.csv")
 
@@ -44,7 +44,7 @@ if __name__ == "__main__":
     args = sys.argv[1:]
     args = parse_args(args)
     print("using", args.unaug_dataset)
-    dataset = utils.dataset(original=args.unaug_dataset, train=args.train)
+    dataset = utils.dataset(original=args.unaug_dataset, train=args.train, confidence=False)
 
     if args.model == "RL-GAN":
         encoder = AE.Encoder()
@@ -116,3 +116,5 @@ if __name__ == "__main__":
 # y_all = pd.concat([labels_synth, y_train, y_test], axis=0)
 # X_train_all, X_test_all, y_train_all, y_test_all = train_test_split(X_all, y_all, test_size=0.2, random_state=45)
 # Encoded_data_all = CustomDataset(X_train_all.to_numpy(), y_train_all.to_numpy())
+# python your_script.py model1  # To use the first model
+# python your_script.py model2  # To use the second model
