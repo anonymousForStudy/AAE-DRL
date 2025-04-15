@@ -208,6 +208,19 @@ or
 ```bash
 python comperativeStudies/AE_main.py --model AE+DQN --train --unaug_dataset
 ```
+*Options*
+--model: select which model to run RL-GAN or AE+DQN (required)
+--batch_size_train: default=32 : batch size for training set 
+--batch_size_test: default=64 : batch size for testing set
+--numEpochs: default=101 : number of epochs
+--loss_threshold: default=0.6 : threshold to save state dictionary
+--train: train model
+--unaug_dataset: train/test model on original dataset
+--file_name: default=ds.csv : set dataset name
+--save_state_dict: default=ae1.pth : set state dictionary name
+--gan_state_dict: default=gan.pth : set GAN state dictionary name (only for RL-GAN)
+--X_ds: default=rl_ds2.csv : refer to RL dataset name
+--y_ds: default=labels1.csv : refer to labels dataset name
 
 In case of RL-GAN, the proposed Generative Adversarial Network (GAN) is executed after the AE.
 To avoid overwriting files add the option --save_state_dict to save the state dictionary under a new name (default: ae.pth) and --file_name to save the dataset under a new name (default: ds.csv)
