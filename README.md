@@ -209,18 +209,18 @@ or
 python comperativeStudies/AE_main.py --model AE+DQN --train --unaug_dataset
 ```
 *Options*
---model: select which model to run RL-GAN or AE+DQN (required)
---batch_size_train: default=32 : batch size for training set 
---batch_size_test: default=64 : batch size for testing set
---numEpochs: default=101 : number of epochs
---loss_threshold: default=0.6 : threshold to save state dictionary
---train: train model
---unaug_dataset: train/test model on original dataset
---file_name: default=ds.csv : set dataset name
---save_state_dict: default=ae1.pth : set state dictionary name
---gan_state_dict: default=gan.pth : set GAN state dictionary name (only for RL-GAN)
---X_ds: default=rl_ds2.csv : refer to RL dataset name
---y_ds: default=labels1.csv : refer to labels dataset name
+- --model: select which model to run RL-GAN or AE+DQN (required)
+- --batch_size_train: default=32, type=int : batch size for training set 
+- --batch_size_test: default=64, type=int : batch size for testing set
+- --numEpochs: default=101, type=int : number of epochs
+- --loss_threshold: default=0.6, type=float : threshold to save state dictionary
+- --train: action="store_true" : train model
+- --unaug_dataset: action="store_true" : train/test model on original dataset
+- --file_name: default=ds.csv : set dataset name
+- --save_state_dict: default=ae1.pth : set state dictionary name
+- --gan_state_dict: default=gan.pth : set GAN state dictionary name (only for RL-GAN)
+- --X_ds: default=rl_ds2.csv : refer to RL dataset name
+- --y_ds: default=labels1.csv : refer to labels dataset name
 
 In case of RL-GAN, the proposed Generative Adversarial Network (GAN) is executed after the AE.
 To avoid overwriting files add the option --save_state_dict to save the state dictionary under a new name (default: ae.pth) and --file_name to save the dataset under a new name (default: ds.csv)
@@ -241,6 +241,12 @@ Specify the path to the dataset generated in the previous step (the default is A
 ```bash
 python comperativeStudies/Comp_classifier_main.py --model RL-GAN --train
 ```
+*Options*
+In addition to the options mentioned in STEP 1, we set:
+- --label_gen: generate label after validation
+- --synth_dataset_path: default=rl_ds1.csv : path to RL dataset
+- --labels_file: default=labels1.csv : set labels dataset name
+- --save_state_dict: default=clf1.csv : set state dictionary name
 
 4.1 To train TD3 (RL-GAN), run the same file implemented for AAE-DRL:
 ```bash
@@ -250,6 +256,19 @@ To train DDQN (AE-DQN), run:
 ```bash
 python comperativeStudies/DQN.py --train
 ```
+*Options*
+- --batch_size_train: default=32, type=int : batch size for training set 
+- --numEpochs: default=100, type=int : run test over n epochs
+- --max_timestep: default=4000, type=int : maximum environment runs
+- --eval_freq: default=400, type=int : evaluate every n episodes
+- --start_timestep: default=50, type= int : stop exploration at n timestep
+- --max_ep_steps: default=100, type=int : delayed policy updates frequency
+- --train: action='store_true' : train and validate model, if not specified then model testing
+- --unaug_dataset: default=True : set to True by default, optionally can set it to False to pre-train augmented dataset
+- --ae_state: default="ae.pth" : refer to autoencoder state dictionary
+- --classifier_state : default="clf1.pth" : refer to classifier state dictionary
+- --rl_dataset: default="rl_ds2.csv" : assign name to the generated dataset
+- --DQL2_state: default="DQL2.pth" : assign state dictionary name to DQN
 
 4.2 To test TD3, run:
 ```bash
