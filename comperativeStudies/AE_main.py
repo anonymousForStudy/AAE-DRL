@@ -28,8 +28,6 @@ def parse_args(args):
     # unaug = unaugmented dataset = original dataset : if False then augmented dataset
     parser.add_argument("--unaug_dataset", action="store_true")
     parser.add_argument("--file_name", default="ds.csv")
-    # PLEASE USE THE ABSOLUTE PATH IF YOU GET A NO FILE IS FOUND!!!
-    # Save AAE state dictionary
     parser.add_argument("--save_state_dict", default="ae1.pth")
     parser.add_argument("--gan_state_dict", default="gan.pth")
 
