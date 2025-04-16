@@ -11,9 +11,9 @@ def parse_args(args):
     parser = argparse.ArgumentParser()
 
     # synthetic dataset path
-    parser.add_argument('--features', default="/results/ds.csv")
+    parser.add_argument('--features', default="results/ds.csv")
     # generated labels path
-    parser.add_argument('--labels', default="/results/labels.csv")
+    parser.add_argument('--labels', default="results/labels.csv")
 
     parser.add_argument("--unaug_dataset", action = "store_true")
 
