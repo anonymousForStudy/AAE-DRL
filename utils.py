@@ -190,11 +190,11 @@ class ReplayBuffer(object):
             S, A1, A2, N, R, D, T = self.storage[i]
             s.append(np.array(S, copy=False))
             a1.append(np.array(A1.detach().cpu().numpy(), copy=False))
-            a2.append(np.array(list(A2.items()), copy=False))
+            a2.append(np.asarray(list(A2.items())))
             n.append(np.array(N, copy=False))
-            r.append(np.array(R, copy=False))
-            d.append(np.array(D, copy=False))
-            t.append(np.array(T, copy=False))
+            r.append(np.asarray(R))
+            d.append(np.asarray(D))
+            t.append(np.asarray(T))
 
         return (np.array(s).squeeze(0), np.array(a1).squeeze(0), np.array(a2).squeeze(0),
                 np.array(n).squeeze(0), np.array(r).squeeze(0), np.array(d).squeeze(0).reshape(-1, 1), np.array(t).squeeze(0))
