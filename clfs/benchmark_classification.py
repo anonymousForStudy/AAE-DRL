@@ -30,7 +30,7 @@ best_gb_param_unaug = {'n_estimators': 29, 'learning_rate': 0.016756252304922673
 # parameters for augmented dataset
 best_xgb_param_aug = {'booster': 'gbtree', 'lambda': 2.032151944034843e-06, 'alpha': 9.557956416749613e-09, 'subsample': 0.9511833522668717, 
                       'colsample_bytree': 0.5585628355617734, 'max_depth': 39, 'min_child_weight': 2, 'eta': 0.01731596321744635, 
-                      'gamma': 0.013622238453642105, 'grow_policy': 'depthwise, "verbosity": 0, "objective": "multi:softmax", "num_class": 30}
+                      'gamma': 0.013622238453642105, 'grow_policy': 'depthwise', "verbosity": 0, "objective": "multi:softmax", "num_class": 30}
 best_KNN_param_aug = {"n_neighbors": 23, "metric": 'euclidean', "leaf_size": 22}
 best_rf_param_aug = {"max_depth":15, "n_estimators" : 50}
 best_gb_param_aug = {"n_estimators":16, "learning_rate" : 0.02429333140155607, "max_depth" : 10}
