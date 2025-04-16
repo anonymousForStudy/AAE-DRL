@@ -19,7 +19,7 @@ def parse_args(args):
 
     # CLASSIFIERS: !!! TO USE GB, keep the following arguments in False (a printed message will appear to confirm the classifier used) !!!
     parser.add_argument("--xgb_clf", default= False, type=bool)
-    parser.add_argument("--KNN_clf", default= False, type=bool)
+    parser.add_argument("--knn_clf", default= False, type=bool)
     parser.add_argument("--rf_clf", default= False, type=bool)
 
     return parser.parse_args(args)
@@ -51,7 +51,7 @@ if __name__ == "__main__":
             y = y[:X.shape[0]]
         X_train, X_test, y_train, y_test = main_u.vertical_split(X, y)
         benchmark_classification.clf_class(X_train, X_test, y_train, y_test, unaugmented = args.unaug_dataset,
-                                           xgb_clf=args.xgb_clf, KNN_clf=args.KNN_clf, rf_clf=args.rf_clf)
+                                           xgb_clf=args.xgb_clf, KNN_clf=args.knn_clf, rf_clf=args.rf_clf)
     else:
         y_rl = pd.DataFrame(pd.read_csv("labels.csv"))
         y_rl = y_rl[y_rl["attack_cat"] != 2] # 2 is a majority class so we drop it
@@ -61,5 +61,5 @@ if __name__ == "__main__":
             y = y[:X.shape[0]] # Split dataset (the synthetic dataset was generated using interpolation, sometimes there's mismatch in size)
 
         X_train, X_test, y_train, y_test = main_u.vertical_split(X, y)
-        benchmark_classification.clf_class(X_train, X_test, y_train, y_test, unaugmented = args.unaug_dataset, xgb_clf=args.xgb_clf, KNN_clf=args.KNN_clf,
+        benchmark_classification.clf_class(X_train, X_test, y_train, y_test, unaugmented = args.unaug_dataset, xgb_clf=args.xgb_clf, KNN_clf=args.knn_clf,
                                            rf_clf=args.rf_clf)
