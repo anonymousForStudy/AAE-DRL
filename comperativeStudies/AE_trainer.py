@@ -34,7 +34,7 @@ def save_features_to_csv(discrete_samples, continuous_samples, binary_samples, f
     binary_df = dict_to_df(binary_samples)
 
     combined_df = pd.concat([discrete_df, continuous_df, binary_df], axis=1)
-    combined_df.to_csv(f'{file_name}.csv', index=False)
+    combined_df.to_csv(f'{file_name}', index=False)
 
     return combined_df
 
