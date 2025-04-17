@@ -308,10 +308,10 @@ We assign another name in the --features option to avoid overwriting files.
 - TabNet: Arik S. O. and Pfister T. (2020). [TabNet: Attentive Interpretable Tabular Learning](https://arxiv.org/abs/1908.07442). ArXiv.
 - Attention Mechanism: Bahdanau D., Cho K. and Bengio Y. (2015). [Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/pdf/1409.0473). ArXiv.
 - Gradient Penalty: Gulrajani I., Ahmed F., Arjovsky M., Dumoulin V. and Courville A. (2017). [Improved Training of Wasserstein GANs](https://arxiv.org/abs/1704.00028). ArXiv.
-- Breiman L. (2001) [Random Forests](https://link.springer.com/article/10.1023/A:1010933404324). Springer.
-- Friedman J. (2000) [Greedy Function Approximation: A Gradient Boosting Machine](https://www.researchgate.net/publication/2424824_Greedy_Function_Approximation_A_Gradient_Boosting_Machine). The Annals of Statistics.
-- Cheng T. and Guestrin C. (2016) [XGBoost: A Scalable Tree Boosting System](https://arxiv.org/abs/1603.02754). ArXiv.
-- Cover T. and Hart P. (2006) [Nearest neighbor pattern classification](https://ieeexplore.ieee.org/document/1053964). IEEE
+- Random Forest: Breiman L. (2001) [Random Forests](https://link.springer.com/article/10.1023/A:1010933404324). Springer.
+- Gradient Boosting: Friedman J. (2000) [Greedy Function Approximation: A Gradient Boosting Machine](https://www.researchgate.net/publication/2424824_Greedy_Function_Approximation_A_Gradient_Boosting_Machine). The Annals of Statistics.
+- XGBoost: Cheng T. and Guestrin C. (2016) [XGBoost: A Scalable Tree Boosting System](https://arxiv.org/abs/1603.02754). ArXiv.
+- KNN: Cover T. and Hart P. (2006) [Nearest neighbor pattern classification](https://ieeexplore.ieee.org/document/1053964). IEEE
 
 
 
