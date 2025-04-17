@@ -53,8 +53,10 @@ if __name__ == "__main__":
         benchmark_classification.clf_class(X_train, X_test, y_train, y_test, unaugmented = args.unaug_dataset,
                                            xgb_clf=args.xgb_clf, KNN_clf=args.knn_clf, rf_clf=args.rf_clf)
     else:
-        y_rl = pd.DataFrame(pd.read_csv("labels.csv"))
+        y_rl = pd.DataFrame(pd.read_csv(args.labels))
         y_rl = y_rl[y_rl["attack_cat"] != 2] # 2 is a majority class so we drop it
+        y_rl = y_rl[y_rl["confidence"] > 0.89]
+        y_rl = y_rl.drop("confidence", axis=1)
         y = pd.concat([y_rl, main_u.y], axis=0) # Join all labels
         y = y.squeeze() # If extra dim from converting a dataframe to a series
         if y.shape[0] != X.shape[0]:
