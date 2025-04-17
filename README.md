@@ -318,14 +318,11 @@ We assign another name in the --features option to avoid overwriting files.
 # Citations
 - UNSW-NB15 dataset
 ```bash
-Moustafa, Nour, et al. "An Ensemble Intrusion Detection Technique based on proposed Statistical Flow Features for Protecting Network Traffic of Internet of Things." IEEE Internet of Things Journal (2018).
-Koroniotis, Nickolaos, Moustafa, Nour, et al. "Towards Developing Network Forensic Mechanism for Botnet Activities in the IoT Based on Machine Learning Techniques." International Conference on Mobile Networks and Management. Springer, Cham, 2017.
-Moustafa, Nour, et al. "Generalized Outlier Gaussian Mixture technique based on Automated Association Features for Simulating and Detecting Web Application Attacks." IEEE Transactions on Sustainable Computing (2018).
-Keshk, Marwa, Moustafa, Nour, et al. "Privacy preservation intrusion detection technique for SCADA systems." Military Communications and Information Systems Conference (MilCIS), 2017. IEEE, 2017.
-Moustafa, Nour, et al. "A New Threat Intelligence Scheme for Safeguarding Industry 4.0 Systems." IEEE Access (2018).
-Moustafa, Nour, et al. "Anomaly Detection System Using Beta Mixture Models and Outlier Detection." Progress in Computing, Analytics and Networking. Springer, Singapore, 2018. 125-135.
-Moustafa, Nour, et al. "Flow Aggregator Module for Analysing Network Traffic." Progress in Computing, Analytics and Networking. Springer, Singapore, 2018. 19-29.
-Moustafa, Nour, et al. "A Network Forensic Scheme Using Correntropy-Variation for Attack Detection." IFIP International Conference on Digital Forensics. Springer, Cham, 2018.
+Moustafa, Nour, and Jill Slay. "UNSW-NB15: a comprehensive data set for network intrusion detection systems (UNSW-NB15 network data set)." Military Communications and Information Systems Conference (MilCIS), 2015. IEEE, 2015.
+Moustafa, Nour, and Jill Slay. "The evaluation of Network Anomaly Detection Systems: Statistical analysis of the UNSW-NB15 dataset and the comparison with the KDD99 dataset." Information Security Journal: A Global Perspective (2016): 1-14.
+Moustafa, Nour, et al. "Novel geometric area analysis technique for anomaly detection using trapezoidal area estimation on large-scale networks." IEEE Transactions on Big Data (2017).
+Moustafa, Nour, et al. "Big data analytics for intrusion detection system: statistical decision-making using finite dirichlet mixture models." Data Analytics and Decision Support for Cybersecurity. Springer, Cham, 2017. 127-156.
+Sarhan, Mohanad, Siamak Layeghy, Nour Moustafa, and Marius Portmann. NetFlow Datasets for Machine Learning-Based Network Intrusion Detection Systems. In Big Data Technologies and Applications: 10th EAI International Conference, BDTA 2020, and 13th EAI International Conference on Wireless Internet, WiCON 2020, Virtual Event, December 11, 2020, Proceedings (p. 117). Springer Nature.
 ```
 
 - TD3
