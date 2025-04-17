@@ -75,7 +75,7 @@ On another note, we provided the code for the Optuna trials in the clf_optim.py 
 - --features: default="ds_org.csv" : equivalent of --dataset_file ; refer to the dataset generated
 - --unaug_dataset : action = "store_true" : use unaugmented dataset, if not specified then augmented dataset
 - --xgb_clf: default= False, type=bool : to use Extreme Gradient Boosting
-- _-KNN_clf: default= False, type=bool : to use K Nearest Neighbor
+- --knn_clf: default= False, type=bool : to use K Nearest Neighbor
 - --rf_clf: default= False, type=bool : to use Random Forest
 
 **Classification report of Random Forest tested on unaugmented data**
@@ -178,7 +178,7 @@ python benchmark_clf_main.py
 7.2. As shown in STEP 2, you can change another classifier using the mentioned options.
 Example:
 ```bash
-python benchmark_clf_main.py --KNN_clf=True
+python benchmark_clf_main.py --knn_clf=True
 ```
 
 *Options*
