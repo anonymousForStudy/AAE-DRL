@@ -155,14 +155,14 @@ class Trainer(object):
 encoder = AE.Encoder()
 encoder.eval()
 decoder = AE.Decoder(10, 30, 64, utils.discrete, utils.continuous, utils.binary)
-decoder.load_state_dict(torch.load("results/ae1.pth", map_location="cpu")["dec"])
+decoder.load_state_dict(torch.load("results/RL-GAN/ae1.pth", map_location="cpu")["dec"])
 decoder.eval()
 generator = gan.Generator()
 discriminator = gan.Discriminator()
-discriminator.load_state_dict(torch.load("results/gan.pth", map_location="cpu")["disc"])
+discriminator.load_state_dict(torch.load("results/RL-GAN/gan.pth", map_location="cpu")["disc"])
 discriminator.eval()
 classifier = MNISTClassifier.Classifier()
-classifier.load_state_dict(torch.load("best_model1.pth", map_location="cpu"))
+classifier.load_state_dict(torch.load("results/RL-GAN/clf1.pth", map_location="cpu"))
 classifier.eval()
 
 
