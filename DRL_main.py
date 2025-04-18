@@ -79,7 +79,7 @@ if __name__ == "__main__":
         d_max = {key: np.argmax(value, axis=1) for key, value in d_dict.items()}
         b_max = {key: np.argmax(value, axis=1) for key, value in b_dict.items()}
 
-        all_dict = {**d_max, **c_dict, **b_max}
+        all_dict = {**d_max, **b_max, **c_dict}
 
         # Save samples
         with open(f'{args.rl_dataset}', 'w', newline='') as file_d:
