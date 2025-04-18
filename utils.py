@@ -19,7 +19,7 @@ def parse_args(args):
     parser.add_argument("--n_inter", default=5, type=int) # we set it to 4 when --unaug_dataset = False
     parser.add_argument("--n_samples_per_inter", default=27321, type=int) # we set it to 43313 when --unaug_dataset = False
 
-    parser.add_argument("--model", choices=['RLGAN', 'AE+DQN'])
+    parser.add_argument("--model", choices=['RL-GAN', 'AE+DQN'])
     parser.add_argument("--save_state_dict", default="results/ae1.pth")
 
     return parser.parse_args(args)
@@ -188,10 +188,10 @@ class ReplayBuffer(object):
         s, a1, a2, n, r, d, t = [], [], [], [], [], [], []
         for i in items_iter:
             S, A1, A2, N, R, D, T = self.storage[i]
-            s.append(np.array(S, copy=False))
+            s.append(np.asarray(S))
             a1.append(np.array(A1.detach().cpu().numpy(), copy=False))
             a2.append(np.asarray(list(A2.items())))
-            n.append(np.array(N, copy=False))
+            n.append(np.asarray(N))
             r.append(np.asarray(R))
             d.append(np.asarray(D))
             t.append(np.asarray(T))
