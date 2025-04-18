@@ -27,14 +27,14 @@ def parse_args(args):
     parser.add_argument('--train', action='store_true')
     # unaug = unaugmented dataset = original dataset : if False then augmented dataset
     parser.add_argument("--unaug_dataset", action="store_true")
-    parser.add_argument("--file_name", default="ds.csv")
-    parser.add_argument("--save_state_dict", default="ae1.pth")
-    parser.add_argument("--gan_state_dict", default="gan.pth")
+    parser.add_argument("--file_name", default="results/RL-GAN/ds.csv")
+    parser.add_argument("--save_state_dict", default="results/RL-GAN/ae1.pth")
+    parser.add_argument("--gan_state_dict", default="results/RL-GAN/gan.pth")
 
     # Path to augmented dataset
-    parser.add_argument('--X_ds', default="rl_ds2.csv")
+    parser.add_argument('--X_ds', default="results/RL-GAN/rl_ds1.csv")
     # Path to augmented dataset's labels
-    parser.add_argument('--y_ds', default="labels1.csv")
+    parser.add_argument('--y_ds', default="results/RL-GAN/labels1.csv")
 
     return parser.parse_args(args)
 
