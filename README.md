@@ -206,7 +206,7 @@ In addition to the options mentioned in STEP 1, we can pass the following:
 ```
 or
 ```bash
-python comperativeStudies/AE_main.py --model AE+DQN --train --unaug_dataset
+python comperativeStudies/AE_main.py --model AE+DQN --train --unaug_dataset --file_name results/AE+DQN/ds.csv --save_state_dict results/AE+DQN/ae.pth 
 ```
 *Options*
 - --model: select which model to run RL-GAN or AE+DQN (required)
@@ -229,6 +229,9 @@ To avoid overwriting files add the option --save_state_dict to save the state di
 ```bash
  python comperativeStudies/AE_main.py --model RL-GAN --unaug_dataset
 ```
+```bash
+ python comperativeStudies/AE_main.py --model AE+DQN --unaug_dataset
+```
 
 2. Use the same script for benchmarking as shown in STEP 2 (AAE-DRL)
 For example, to perform benchmark classification with GB, run:
@@ -241,6 +244,10 @@ Specify the path to the dataset generated in the previous step (the default is A
 ```bash
 python comperativeStudies/Comp_classifier_main.py --model RL-GAN --train
 ```
+```bash
+python comperativeStudies/Comp_classifier_main.py --model AE+DQN --train
+```
+
 *Options*
 In addition to the options mentioned in STEP 1, we set:
 - --label_gen: generate label after validation
@@ -290,7 +297,10 @@ python comperativeStudies/Comp_classifier_main.py --label_gen --model RL-GAN
 
 6. To train the AE on augmented data, run:
 ```bash
-python comperativeStudies/AE_main.py --model RL-GAN --train
+python comperativeStudies/AE_main.py --model RL-GAN --train 
+```
+```bash
+python comperativeStudies/AE_main.py --model AE+DQN --train --file_name results/AE+DQN/ds_fin.csv --save_state_dict results/AE+DQN/ae_fin.pth --X_ds results/AE+DQN/rl_ds.csv --y_ds results/AE+DQN/labels.csv
 ```
 
 7. Similarly, run the benchmark classification file to evaluate the augmented data:
