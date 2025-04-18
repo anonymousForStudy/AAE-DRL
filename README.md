@@ -248,7 +248,7 @@ python comperativeStudies/Comp_classifier_main.py --model RL-GAN --train
 ```
 or
 ```bash
-python comperativeStudies/Comp_classifier_main.py --model AE+DQN --train --synth_dataset_path results/AE+DQN/rl_ds.csv --labels_file results/AE+DQN//labels.csv --save_state_dict results/AE+DQN/clf1.pth
+python comperativeStudies/Comp_classifier_main.py --model AE+DQN --train --save_state_dict results/AE+DQN/clf1.pth
 ```
 
 *Options*
@@ -298,11 +298,16 @@ In addition to the options mentioned in STEP4 (AAE-DRL), we can pass the followi
 ```bash
 python comperativeStudies/Comp_classifier_main.py --label_gen --model RL-GAN   
 ```
+or 
+```bash
+python comperativeStudies/Comp_classifier_main.py --label_gen --model AE+DQN  --synth_dataset_path results/AE+DQN/rl_ds.csv --labels_file results/AE+DQN//labels.csv
+```
 
 6. To train the AE on augmented data, run:
 ```bash
 python comperativeStudies/AE_main.py --model RL-GAN --train 
 ```
+or
 ```bash
 python comperativeStudies/AE_main.py --model AE+DQN --train --file_name results/AE+DQN/ds_fin.csv --save_state_dict results/AE+DQN/ae_fin.pth --X_ds results/AE+DQN/rl_ds.csv --y_ds results/AE+DQN/labels.csv
 ```
