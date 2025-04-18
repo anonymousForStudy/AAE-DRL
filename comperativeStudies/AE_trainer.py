@@ -55,13 +55,13 @@ def train_model(train_loader, encoder, decoder, encoder_opt, decoder_opt):
         discrete_targets = {}
 
         for feature in decoder.discrete_features:
-            continuous_targets[feature] = X[:, :4]
+            continuous_targets[feature] = X[:, :3]
 
         for feature in decoder.continuous_features:
-            continuous_targets[feature] = X[:, 6:]
+            continuous_targets[feature] = X[:, 5:]
 
         for feature in decoder.binary_features:
-            binary_targets[feature] = X[:, 4:6]
+            binary_targets[feature] = X[:, 3:5]
 
 
         encoder_opt.zero_grad()
@@ -101,13 +101,13 @@ def evaluate_model(val_loader, encoder, decoder):
             discrete_targets = {}
 
             for feature in decoder.discrete_features:
-                continuous_targets[feature] = X[:, :4]
+                continuous_targets[feature] = X[:, :3]
 
             for feature in decoder.continuous_features:
-                continuous_targets[feature] = X[:, 6:]
+                continuous_targets[feature] = X[:, 5:]
 
             for feature in decoder.binary_features:
-                binary_targets[feature] = X[:, 4:6]
+                binary_targets[feature] = X[:, 3:5]
 
             encoding = encoder(X)
             discrete_outputs, continuous_outputs, binary_outputs = decoder(encoding)
