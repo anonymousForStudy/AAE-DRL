@@ -283,11 +283,11 @@ python comperativeStudies/DQN.py --train
 
 4.2 To test TD3, run:
 ```bash
-python DRL_main.py --train --RLGAN
+python DRL_main.py --RLGAN
 ```
 To test DDQN, run:
 ```bash
-python comperativeStudies/DQN.py --train
+python comperativeStudies/DQN.py
 ```
 
 *Options*
