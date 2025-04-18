@@ -208,6 +208,7 @@ or
 ```bash
 python comperativeStudies/AE_main.py --model AE+DQN --train --unaug_dataset --file_name results/AE+DQN/ds.csv --save_state_dict results/AE+DQN/ae.pth 
 ```
+
 *Options*
 - --model: select which model to run RL-GAN or AE+DQN (required)
 - --batch_size_train: default=32, type=int : batch size for training set 
@@ -245,7 +246,7 @@ Specify the path to the dataset generated in the previous step (the default is A
 python comperativeStudies/Comp_classifier_main.py --model RL-GAN --train
 ```
 ```bash
-python comperativeStudies/Comp_classifier_main.py --model AE+DQN --train
+python comperativeStudies/Comp_classifier_main.py --model AE+DQN --train --synth_dataset_path results/AE+DQN/rl_ds.csv --labels_file results/AE+DQN//labels.csv --save_state_dict results/AE+DQN/clf1.pth
 ```
 
 *Options*
