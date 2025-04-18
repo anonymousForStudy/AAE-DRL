@@ -38,13 +38,13 @@ def parse_args(args):
     parser.add_argument('--train', action='store_true')
     # unaug = unaugmented dataset = original dataset : if False then augmented dataset
     parser.add_argument("--unaug_dataset", default=True)
-    parser.add_argument("--ae_state", default="ae.pth")  # state dictionary
-    parser.add_argument("--classifier_state", default="clf1.pth")  # state dictionary
+    parser.add_argument("--ae_state", default="results/AE+DQN/ae.pth")  # state dictionary
+    parser.add_argument("--classifier_state", default="results/AE+DQN/clf1.pth")  # state dictionary
 
 
     # save samples and state dictionaries
-    parser.add_argument("--rl_dataset", default="rl_ds2.csv")  # newly generated dataset
-    parser.add_argument("--DQL2_state", default="DQL2.pth")  # state dictionary
+    parser.add_argument("--rl_dataset", default="results/AE+DQN/rl_ds.csv")  # newly generated dataset
+    parser.add_argument("--DQL2_state", default="results/AE+DQN/DQL2.pth")  # state dictionary
 
     return parser.parse_args(args)
 
