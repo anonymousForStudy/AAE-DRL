@@ -230,6 +230,7 @@ To avoid overwriting files add the option --save_state_dict to save the state di
 ```bash
  python comperativeStudies/AE_main.py --model RL-GAN --unaug_dataset
 ```
+or
 ```bash
  python comperativeStudies/AE_main.py --model AE+DQN --unaug_dataset
 ```
@@ -245,6 +246,7 @@ Specify the path to the dataset generated in the previous step (the default is A
 ```bash
 python comperativeStudies/Comp_classifier_main.py --model RL-GAN --train
 ```
+or
 ```bash
 python comperativeStudies/Comp_classifier_main.py --model AE+DQN --train --synth_dataset_path results/AE+DQN/rl_ds.csv --labels_file results/AE+DQN//labels.csv --save_state_dict results/AE+DQN/clf1.pth
 ```
@@ -258,8 +260,9 @@ In addition to the options mentioned in STEP 1, we set:
 
 4.1 To train TD3 (RL-GAN), run the same file implemented for AAE-DRL:
 ```bash
-python DRL_main.py --train --RLGAN
+python DRL_main.py --train --RLGAN --rl_dataset results/RL-GAN/rl_ds1.csv --actor_path results/RL-GAN/actor1.pth --critic_path results/RL-GAN/critic1.pth
 ```
+or
 To train DDQN (AE-DQN), run:
 ```bash
 python comperativeStudies/DQN.py --train
