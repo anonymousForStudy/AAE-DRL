@@ -33,12 +33,12 @@ def parse_args(args):
     # Generate labels for synthetic dataset
     parser.add_argument("--label_gen", action="store_true")
     parser.add_argument("--synth_dataset", default=False)
-    parser.add_argument("--synth_dataset_path", default="rl_ds1.csv") # path to unsupervised dataset
+    parser.add_argument("--synth_dataset_path", default="results/RL-GAN/rl_ds1.csv") # path to unsupervised dataset
     # PLEASE USE THE ABSOLUTE PATH IF YOU GET A "NO FILE IS FOUND" ERROR!!!
     # save labels
-    parser.add_argument("--labels_file", default = "labels1.csv")
+    parser.add_argument("--labels_file", default = "results/RL-GAN/labels1.csv")
     # save classifier state dictionary
-    parser.add_argument("--save_state_dict", default="clf1.pth")
+    parser.add_argument("--save_state_dict", default="results/RL-GAN/clf1.pth")
 
     return parser.parse_args(args)
 
