@@ -166,4 +166,11 @@ Unaugmented data
 [I 2025-04-17 23:05:11,078] Trial 47 finished with value: 0.3969934640522876 and parameters: {'booster': 'gbtree', 'lambda': 3.454454068797536e-08, 'alpha': 5.067147076814597e-06, 'subsample': 0.891778688262735, 'colsample_bytree': 0.9533733573702147, 'max_depth': 23, 'min_child_weight': 2, 'eta': 0.007475437113197638, 'gamma': 0.0015375229477889375, 'grow_policy': 'depthwise'}. Best is trial 47 with value: 0.3969934640522876.
 [I 2025-04-17 23:55:31,080] Trial 0 finished with value: 0.39936274509803926 and parameters: {'rf_max_depth': 17, 'rf_n_estimators': 125}. Best is trial 0 with value: 0.39936274509803926.
 [I 2025-04-18 00:40:32,228] Trial 10 finished with value: 0.36094771241830065 and parameters: {'n_neighbors': 29, 'metric': 'minkowski', 'p': 3, 'leaf_size': 78}. Best is trial 10 with value: 0.36094771241830065.
+
+Augmented data
+[I 2025-04-19 01:44:38,912] Trial 11 finished with value: 0.47082518014770613 and parameters: {'n_neighbors': 30, 'metric': 'minkowski', 'p': 3, 'leaf_size': 77}. Best is trial 11 with value: 0.47082518014770613.
+[I 2025-04-19 02:15:48,832] Trial 0 finished with value: 0.49277916158271945 and parameters: {'gb_n_estimators': 22, 'gb_learning_rate': 0.002929003473298436, 'gb_max_depth': 6}. Best is trial 0 with value: 0.49277916158271945.
+[I 2025-04-19 02:42:07,693] Trial 0 finished with value: 0.4925671743680239 and parameters: {'rf_max_depth': 10, 'rf_n_estimators': 100}. Best is trial 0 with value: 0.4925671743680239.
+[I 2025-04-19 02:55:25,964] Trial 29 finished with value: 0.49973502914679385 and parameters: {'booster': 'dart', 'lambda': 6.750099537477099e-06, 'alpha': 3.0582425177936835e-14, 'subsample': 0.15496725883733709, 'colsample_bytree': 0.3700375727088383, 'max_depth': 21, 'min_child_weight': 2, 'eta': 2.204243829997721e-05, 'gamma': 5.942381532427477e-08, 'grow_policy': 'depthwise', 'sample_type': 'uniform', 'normalize_type': 'forest', 'rate_drop': 3.598195228267698e-05, 'skip_drop': 1.0174453746140427e-10}. Best is trial 29 with value: 0.49973502914679385.
+
 """
